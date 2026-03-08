@@ -2,11 +2,11 @@ import Polaroid from "./Polaroid";
 
 export default function CardGallery({ onFinish }) {
   const cards = [
-    { photo: "/photos/photo1.png", text: "Ты делаешь мою жизнь счастливой ❤️" },
-    { photo: "/photos/photo2.png", text: "С тобой каждый момент особенный" },
-    { photo: "/photos/photo3.png", text: "Ты моя любовь" },
-    { photo: "/photos/photo4.png", text: "Самая красивая" },
-    { photo: "/photos/photo5.png", text: "И самая любимая" },
+    { photo: "./photos/photo1.png", text: "Ты делаешь мою жизнь счастливой ❤️" },
+    { photo: "./photos/photo2.png", text: "С тобой каждый момент особенный" },
+    { photo: "./photos/photo3.png", text: "Ты моя любовь" },
+    { photo: "./photos/photo4.png", text: "Самая красивая" },
+    { photo: "./photos/photo5.png", text: "И самая любимая" },
   ];
 
   let opened = 0;
