@@ -1,40 +1,33 @@
-import {useState} from "react"
-import "../styles/polaroid.css"
+import { useState } from "react";
+import "../styles/polaroid.css";
 
-export default function Polaroid({photo,text,onOpen}){
+export default function Polaroid({ photo, text, onOpen }) {
+  const [open, setOpen] = useState(false);
 
-const[open,setOpen]=useState(false)
+  function handleClick() {
+    if (!open) {
+      setOpen(true);
+      onOpen?.();
+    }
+  }
 
-function handle(){
+  // Случайный наклон -7° до 7°
+  const angle = Math.random() * 14 - 7;
 
-if(!open){
-setOpen(true)
-onOpen()
-}
-
-}
-
-const angle=Math.random()*14-7
-
-return(
-
-<div
-className={`polaroid ${open?"open":""}`}
-style={{transform:`rotate(${angle}deg)`}}
-onClick={handle}
->
-
-{open?(
-<>
-<img src={photo}/>
-<p>{text}</p>
-</>
-):(
-<div className="cover">Нажми ❤️</div>
-)}
-
-</div>
-
-)
-
+  return (
+    <div
+      className={`polaroid ${open ? "open" : ""}`}
+      style={{ transform: `rotate(${angle}deg)` }}
+      onClick={handleClick}
+    >
+      {open ? (
+        <>
+          <img src={photo} alt="Фото" />
+          <p>{text}</p>
+        </>
+      ) : (
+        <div className="cover">Нажми ❤️</div>
+      )}
+    </div>
+  );
 }
