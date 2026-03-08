@@ -1,0 +1,18 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  overflow:hidden;
+  font-family: sans-serif;
+  background:#0d0d0d;
+  color:white;
+}
+
+.app{
+  width:100vw;
+  height:100vh;
+  position:relative;
+}
